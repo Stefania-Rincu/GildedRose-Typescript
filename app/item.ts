@@ -17,5 +17,6 @@ export const itemNames = {
     WhateverItem: 'Whatever Item',
     ConjuredWhateverItem: 'Conjured Whatever Item',
     ConjuredAgedBrie: 'Conjured Aged Brie',
-    ConjuredBackstagePasses: 'Conjured Backstage passes to a TAFKAL80ETC concert',
-}
+    ConjuredBackstagePasses:
+        'Conjured Backstage passes to a TAFKAL80ETC concert',
+};

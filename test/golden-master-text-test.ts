@@ -16,7 +16,7 @@ const items: Array<Item> = [
     new Item(itemNames.ConjuredWhateverItem, 3, 20),
     new Item(itemNames.ConjuredAgedBrie, 4, 20),
     new Item(itemNames.ConjuredBackstagePasses, 5, 20),
-]
+];
 
 let gildedRose = new GildedRose(items);
 
@@ -25,5 +25,7 @@ gildedRose.updateQuality();
 gildedRose.updateQuality();
 
 for (let idx: number = 0; idx < gildedRose.items.length; idx++) {
-    console.log(`${gildedRose.items[idx].name} - sellIn ${gildedRose.items[idx].sellIn} - quality ${gildedRose.items[idx].quality}`);
+    console.log(
+        `${gildedRose.items[idx].name} - sellIn ${gildedRose.items[idx].sellIn} - quality ${gildedRose.items[idx].quality}`,
+    );
 }
