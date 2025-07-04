@@ -1,1 +1,1 @@
-GildedRose - Typescript;
+# **GildedRose - Typescript**
