@@ -1,17 +1,18 @@
-import { Item, GildedRose } from '../app/gilded-rose';
+import { GildedRose } from '../app/gilded-rose';
+import { Item, itemNames } from '../app/item';
 
 const items: Array<Item> = [
-    new Item('Whatever Item', 11, 10),
-    new Item('Whatever Item', 2, 2),
-    new Item('Whatever Item', 0, 10),
-    new Item('Sulfuras, Hand of Ragnaros', 1, 80),
-    new Item('Aged Brie', 4, 10),
-    new Item('Aged Brie', 4, 49),
-    new Item('Aged Brie', 0, 10),
-    new Item('Backstage passes to a TAFKAL80ETC concert', 20, 20),
-    new Item('Backstage passes to a TAFKAL80ETC concert', 10, 20),
-    new Item('Backstage passes to a TAFKAL80ETC concert', 5, 20),
-    new Item('Backstage passes to a TAFKAL80ETC concert', 2, 20)
+    new Item(itemNames.WhateverItem, 11, 10),
+    new Item(itemNames.WhateverItem, 2, 2),
+    new Item(itemNames.WhateverItem, 0, 10),
+    new Item(itemNames.Sulfuras, 1, 80),
+    new Item(itemNames.AgedBrie, 4, 10),
+    new Item(itemNames.AgedBrie, 4, 49),
+    new Item(itemNames.AgedBrie, 0, 10),
+    new Item(itemNames.BackstagePasses, 20, 20),
+    new Item(itemNames.BackstagePasses, 10, 20),
+    new Item(itemNames.BackstagePasses, 5, 20),
+    new Item(itemNames.BackstagePasses, 2, 20)
 ]
 
 let gildedRose = new GildedRose(items);

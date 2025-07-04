@@ -1,5 +1,6 @@
 const { expect } = require('chai');
-import { Item, GildedRose } from '../app/gilded-rose';
+import { GildedRose } from '../app/gilded-rose';
+import { Item, itemNames } from '../app/item';
 
 describe('Gilded Rose', function () {
 
@@ -13,10 +14,6 @@ describe('Gilded Rose', function () {
         expect(items[0].quality).to.equal(7);
     });
 
-});
-
-describe('Gilded Rose', function () {
-
     it('Should decrease sellIn and keep quality >= 0', function() {
         const gildedRose = new GildedRose([ new Item('Whatever Item', 2, 2) ]);
         gildedRose.updateQuality()
@@ -26,10 +23,6 @@ describe('Gilded Rose', function () {
         expect(items[0].sellIn).to.equal(-1);
         expect(items[0].quality).to.equal(0);
     });
-
-});
-
-describe('Gilded Rose', function () {
 
     it('Should decrease quality by 2 when sellIn <= 0', function() {
         const gildedRose = new GildedRose([ new Item('Whatever Item', 0, 10) ]);
@@ -41,10 +34,6 @@ describe('Gilded Rose', function () {
         expect(items[0].quality).to.equal(4);
     });
 
-});
-
-describe('Gilded Rose', function () {
-
     it('Should not decrease sellIn or quality for Sulfuras', function() {
         const gildedRose = new GildedRose([ new Item('Sulfuras, Hand of Ragnaros', 1, 80) ]);
         gildedRose.updateQuality()
@@ -54,10 +43,6 @@ describe('Gilded Rose', function () {
         expect(items[0].sellIn).to.equal(1);
         expect(items[0].quality).to.equal(80);
     });
-
-});
-
-describe('Gilded Rose', function () {
 
     it('Should decrease sellIn and increase quality for Aged Brie', function() {
         const gildedRose = new GildedRose([ new Item('Aged Brie', 4, 10) ]);
@@ -69,10 +54,6 @@ describe('Gilded Rose', function () {
         expect(items[0].quality).to.equal(13);
     });
 
-});
-
-describe('Gilded Rose', function () {
-
     it('Should decrease sellIn and keep quality <= 50 for Aged Brie', function() {
         const gildedRose = new GildedRose([ new Item('Aged Brie', 4, 49) ]);
         gildedRose.updateQuality()
@@ -82,10 +63,6 @@ describe('Gilded Rose', function () {
         expect(items[0].sellIn).to.equal(1);
         expect(items[0].quality).to.equal(50);
     });
-
-});
-
-describe('Gilded Rose', function () {
 
     it('Should increase quality by 2 when sellIn <= 0 for Aged Brie', function() {
         const gildedRose = new GildedRose([ new Item('Aged Brie', 0, 10) ]);
@@ -97,10 +74,6 @@ describe('Gilded Rose', function () {
         expect(items[0].quality).to.equal(16);
     });
 
-});
-
-describe('Gilded Rose', function () {
-
     it('Should decrease sellIn and increase quality for Backstage passes', function() {
         const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC concert', 20, 20) ]);
         gildedRose.updateQuality()
@@ -110,10 +83,6 @@ describe('Gilded Rose', function () {
         expect(items[0].sellIn).to.equal(17);
         expect(items[0].quality).to.equal(23);
     });
-
-});
-
-describe('Gilded Rose', function () {
 
     it('Should decrease sellIn and increase quality by 2 for Backstage passes', function() {
         const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC concert', 10, 20) ]);
@@ -125,10 +94,6 @@ describe('Gilded Rose', function () {
         expect(items[0].quality).to.equal(26);
     });
 
-});
-
-describe('Gilded Rose', function () {
-
     it('Should decrease sellIn and increase quality by 3 for Backstage passes', function() {
         const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC concert', 5, 20) ]);
         gildedRose.updateQuality()
@@ -139,10 +104,6 @@ describe('Gilded Rose', function () {
         expect(items[0].quality).to.equal(29);
     });
 
-});
-
-describe('Gilded Rose', function () {
-
     it('Should make quality = 0 when sellIn < 0 for Backstage passes', function() {
         const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC concert', 2, 20) ]);
         gildedRose.updateQuality()
@@ -152,5 +113,4 @@ describe('Gilded Rose', function () {
         expect(items[0].sellIn).to.equal(-1);
         expect(items[0].quality).to.equal(0);
     });
-
 });
