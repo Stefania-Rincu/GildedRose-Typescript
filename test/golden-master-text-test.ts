@@ -12,7 +12,10 @@ const items: Array<Item> = [
     new Item(itemNames.BackstagePasses, 20, 20),
     new Item(itemNames.BackstagePasses, 10, 20),
     new Item(itemNames.BackstagePasses, 5, 20),
-    new Item(itemNames.BackstagePasses, 2, 20)
+    new Item(itemNames.BackstagePasses, 2, 20),
+    new Item(itemNames.ConjuredWhateverItem, 3, 20),
+    new Item(itemNames.ConjuredAgedBrie, 4, 20),
+    new Item(itemNames.ConjuredBackstagePasses, 5, 20),
 ]
 
 let gildedRose = new GildedRose(items);

@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 import { GildedRose } from '../app/gilded-rose';
-import { Item, itemNames } from '../app/item';
+import { Item } from '../app/item';
 
 describe('Gilded Rose', function () {
 
@@ -112,5 +112,35 @@ describe('Gilded Rose', function () {
         expect(items[0].name).to.equal('Backstage passes to a TAFKAL80ETC concert');
         expect(items[0].sellIn).to.equal(-1);
         expect(items[0].quality).to.equal(0);
+    });
+
+    it('Should decrease twice as fast as a normal item if Conjured', function() {
+        const gildedRose = new GildedRose([ new Item('Conjured Whatever Item', 3, 20) ]);
+        gildedRose.updateQuality()
+        gildedRose.updateQuality();
+        const items = gildedRose.updateQuality();
+        expect(items[0].name).to.equal('Conjured Whatever Item');
+        expect(items[0].sellIn).to.equal(0);
+        expect(items[0].quality).to.equal(12);
+    });
+
+    it('Conjured should not affect items that do not decrease quality - Aged Brie', function() {
+        const gildedRose = new GildedRose([ new Item('Conjured Aged Brie', 4, 20) ]);
+        gildedRose.updateQuality()
+        gildedRose.updateQuality();
+        const items = gildedRose.updateQuality();
+        expect(items[0].name).to.equal('Conjured Aged Brie');
+        expect(items[0].sellIn).to.equal(1);
+        expect(items[0].quality).to.equal(23);
+    });
+
+    it('Conjured should not affect items that do not decrease quality - Backstage passes', function() {
+        const gildedRose = new GildedRose([ new Item('Conjured Backstage passes to a TAFKAL80ETC concert', 5, 20) ]);
+        gildedRose.updateQuality()
+        gildedRose.updateQuality();
+        const items = gildedRose.updateQuality();
+        expect(items[0].name).to.equal('Conjured Backstage passes to a TAFKAL80ETC concert');
+        expect(items[0].sellIn).to.equal(2);
+        expect(items[0].quality).to.equal(29);
     });
 });

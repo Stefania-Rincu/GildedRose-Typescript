@@ -14,5 +14,8 @@ export const itemNames = {
     AgedBrie: 'Aged Brie',
     Sulfuras: 'Sulfuras, Hand of Ragnaros',
     BackstagePasses: 'Backstage passes to a TAFKAL80ETC concert',
-    WhateverItem: 'Whatever Item'
+    WhateverItem: 'Whatever Item',
+    ConjuredWhateverItem: 'Conjured Whatever Item',
+    ConjuredAgedBrie: 'Conjured Aged Brie',
+    ConjuredBackstagePasses: 'Conjured Backstage passes to a TAFKAL80ETC concert',
 }
